@@ -15,14 +15,14 @@ function submitForm() {
 
     const genderValue = gender.value;
     
-    // Validate email format
+    // Validating the email format
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     if (!email.match(emailPattern)) {
         alert("Please enter a valid email address.");
         return;
     }
 
-    // Validate mobile number format (10 digits)
+    // Validating the  mobile number format (it should be of 10 digits)
     const mobilePattern = /^\d{10}$/;
     if (!mobile.match(mobilePattern)) {
         alert("Please enter a valid 10-digit mobile number.");
@@ -44,10 +44,9 @@ function submitForm() {
     document.getElementById("popup-data").innerHTML = popupData;
     document.getElementById("popup").style.display = "block";
 
-    // Add an event listener to the close button in the popup
     document.querySelector('.close').addEventListener('click', function() {
         closePopup();
-        resetForm(); // Reset the form when the popup is closed
+        resetForm();
     });
 }
 
